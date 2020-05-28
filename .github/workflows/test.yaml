@@ -12,6 +12,14 @@ jobs:
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8]
+    services:
+      mssql:
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        ports:
+          - 1433:1433
+        env:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: Ibis_MSSQL_2017
     steps:
       - name: 'Checkout Infastructure'
         uses: actions/checkout@master
