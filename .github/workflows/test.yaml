@@ -39,3 +39,7 @@ jobs:
       - name: Flake8 Checks
         run: |
           flake8
+      - name: Upload Data to MSSQL Database
+        run: |
+          python ci/scripts/datamgr.py download
+          python ci/scripts/datamgr.py mssql

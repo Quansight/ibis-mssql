@@ -28,7 +28,7 @@ setup(
     maintainer="Quansight",
     maintainer_email="costrouchov@quansight.com",
     packages=find_packages(),
-    install_requires=["ibis", "pyodbc"],
+    install_requires=["ibis", "sqlalchemy", "pyodbc"],
     extras_require={
         'develop': [
             'black',
@@ -40,6 +40,9 @@ setup(
             'pre-commit',
             'pygit2',
             'pytest>=4.5',
+            'plumbum',
+            'toolz',
+            'pandas',
         ]
     },
 )
