@@ -9,7 +9,7 @@ import ibis_mssql
 def backend():
     user = os.environ.get('IBIS_TEST_MSSQL_USER', 'sa')
     password = os.environ.get('IBIS_TEST_MSSQL_PASSWORD', 'Ibis_MSSQL_2017')
-    host = os.environ.get('IBIS_TEST_MSSQL_HOST', 'mssql')
+    host = os.environ.get('IBIS_TEST_MSSQL_HOST', 'localhost')
     port = os.environ.get('IBIS_TEST_MSSQL_PORT', 1433)
     database = os.environ.get('IBIS_TEST_MSSQL_DATABASE', 'master')
     return ibis_mssql.connect(
@@ -18,13 +18,8 @@ def backend():
 
 
 @pytest.fixture(scope='session')
-def con(backend):
-    return backend.connection
-
-
-@pytest.fixture
 def alltypes(backend):
-    return backend.functional_alltypes
+    return backend.table('functional_alltypes')
 
 
 @pytest.fixture(scope='session')
@@ -34,12 +29,12 @@ def sorted_alltypes(alltypes):
 
 @pytest.fixture(scope='session')
 def batting(backend):
-    return backend.batting
+    return backend.table('batting')
 
 
 @pytest.fixture(scope='session')
 def awards_players(backend):
-    return backend.awards_players
+    return backend.table('awards_players')
 
 
 @pytest.fixture(scope='session')
