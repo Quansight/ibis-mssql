@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='ibis-mssql',
     url='https://github.com/quansight/ibis-mssql',
-    version='0.1.2',
+    version='0.1.3',
     python_requires='>=3.6',
     description="Ibis backend for MSSQL",
     long_description=long_description,
