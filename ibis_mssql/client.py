@@ -9,7 +9,8 @@ import ibis.expr.datatypes as dt
 import ibis.expr.operations as ops
 import ibis.expr.schema as sch
 import ibis.sql.alchemy as alch
-from ibis.sql.mssql.compiler import MSSQLDialect
+
+from ibis_mssql.compiler import MSSQLDialect
 
 import pyodbc  # NOQA fail early if the driver is missing
 

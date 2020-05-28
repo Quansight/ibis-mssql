@@ -1,6 +1,7 @@
 from ibis.sql.alchemy import to_sqlalchemy
-from ibis.sql.mssql.client import MSSQLClient
-from ibis.sql.mssql.compiler import (  # noqa: F401, E501
+
+from ibis_mssql.client import MSSQLClient
+from ibis_mssql.compiler import (  # noqa: F401, E501
     compiles,
     dialect,
     rewrites,
