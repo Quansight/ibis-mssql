@@ -1,4 +1,12 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+from os import path
+
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 
 setup(
     name='ibis-mssql',
@@ -6,6 +14,8 @@ setup(
     version='0.1.0',
     python_requires='>=3.6',
     description="Ibis backend for MSSQL",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Operating System :: OS Independent',
@@ -17,6 +27,7 @@ setup(
     license='Apache License, Version 2.0',
     maintainer="Quansight",
     maintainer_email="costrouchov@quansight.com",
+    packages=find_packages(),
     install_requires=["ibis", "pyodbc"],
     extras_require={
         'develop': [
